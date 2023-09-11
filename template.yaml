@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: nodejs18.x
+
+Resources:
+  Lambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: app.handler
+      Timeout: 60
+      Architectures:
+      - x86_64
+      Events:
+        Api:
+          Type: HttpApi
+          Properties:
+            Path: /
+            TimeoutInMillis: 60000
+            Method: POST
