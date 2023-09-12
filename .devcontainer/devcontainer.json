@@ -13,15 +13,12 @@
 		"WORKSPACE_FOLDER": "${workspaceFolder}"
 	},
 	"mounts": [
-		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind"
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind",
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
 	],
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"upgradePackages": "true"
-		},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"dockerDashComposeVersion": "none",
-			"installDockerBuildx": false
 		},
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "lts"
