@@ -1,39 +1,16 @@
 {
     "configurations": [
         {
-            "type": "aws-sam",
-            "request": "direct-invoke",
-            "name": "lambda-nodejs18.x:HelloWorldFunction (nodejs18.x)",
-            "invokeTarget": {
-                "target": "template",
-                "templatePath": "${workspaceFolder}/template.yaml",
-                "logicalId": "HelloWorldFunction"
-            },
-            "lambda": {
-                "payload": {},
-                "environmentVariables": {},
-                "runtime": "nodejs18.x"
-            }
+            "name": "Start Lambda",
+            "type": "node-terminal",
+            "command": "bash start.sh",
+            "request": "launch"
         },
         {
-            "type": "aws-sam",
-            "request": "direct-invoke",
-            "name": "API lambda-nodejs18.x:HelloWorldFunction (nodejs18.x)",
-            "invokeTarget": {
-                "target": "api",
-                "templatePath": "${workspaceFolder}/template.yaml",
-                "logicalId": "HelloWorldFunction"
-            },
-            "api": {
-                "path": "/hello",
-                "httpMethod": "get",
-                "payload": {
-                    "json": {}
-                }
-            },
-            "lambda": {
-                "runtime": "nodejs18.x"
-            }
+            "name": "Make web call to started lambda",
+            "type": "node-terminal",
+            "command": "bash execute.sh",
+            "request": "launch"
         }
     ]
 }
