@@ -1,8 +1,13 @@
 {
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"target": "dev-container",
+		"context": ".."
+	},
 	"name": "Node.js",
-	"image": "node:lts",
 	"remoteUser": "root",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
+	"workspaceFolder": "/workspace",
 	"containerEnv": {
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
 		"WORKSPACE_FOLDER": "${workspaceFolder}"

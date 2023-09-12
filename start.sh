@@ -3,4 +3,5 @@ sam local start-api \
     --host "0.0.0.0" \
     --container-host host.docker.internal \
     --container-host-interface "0.0.0.0" \
-    --docker-volume-basedir ${LOCAL_WORKSPACE_FOLDER}
+    --docker-volume-basedir ${LOCAL_WORKSPACE_FOLDER} \
+    --debug
